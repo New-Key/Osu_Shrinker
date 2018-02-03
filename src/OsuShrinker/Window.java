@@ -70,6 +70,9 @@ public class Window extends javax.swing.JFrame {
         L_Mania = new javax.swing.JLabel();
         N_Mania = new javax.swing.JLabel();
         B_Run = new javax.swing.JButton();
+        C_JPG = new javax.swing.JCheckBox();
+        L_max_img = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         B_Pause = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
         L_i = new javax.swing.JLabel();
@@ -144,6 +147,13 @@ public class Window extends javax.swing.JFrame {
             }
         });
 
+        C_JPG.setText("Reduce jpg size");
+
+        L_max_img.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        L_max_img.setText("0");
+
+        jLabel2.setText("Images:");
+
         javax.swing.GroupLayout PanelLayout = new javax.swing.GroupLayout(Panel);
         Panel.setLayout(PanelLayout);
         PanelLayout.setHorizontalGroup(
@@ -190,7 +200,15 @@ public class Window extends javax.swing.JFrame {
                                     .addComponent(L_Status, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(B_SelectFolder)))
                             .addGroup(PanelLayout.createSequentialGroup()
-                                .addGap(105, 105, 105)
+                                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelLayout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(L_max_img, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelLayout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(C_JPG)))
+                                .addGap(18, 18, 18)
                                 .addComponent(B_Run, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -225,8 +243,13 @@ public class Window extends javax.swing.JFrame {
                         .addComponent(L_STD)
                         .addComponent(N_STD)))
                 .addGap(18, 18, 18)
-                .addComponent(B_Run)
-                .addContainerGap())
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(B_Run)
+                    .addComponent(C_JPG))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(L_max_img)))
         );
 
         B_Pause.setText("||");
@@ -401,6 +424,9 @@ public class Window extends javax.swing.JFrame {
 		if(C_Taiko.isSelected()){
 		    RunIt.Ataiko=true;
 		}
+                if(C_JPG.isSelected()){
+                    RunIt.JPG = true;
+                }
 		if(pass==true){
 		if(caution==true){
 		    JDialog.setDefaultLookAndFeelDecorated(true);
@@ -473,6 +499,7 @@ public class Window extends javax.swing.JFrame {
     public static javax.swing.JButton B_Run;
     public static javax.swing.JButton B_SelectFolder;
     public static javax.swing.JCheckBox C_CTB;
+    public static javax.swing.JCheckBox C_JPG;
     public static javax.swing.JCheckBox C_Mania;
     public static javax.swing.JCheckBox C_STD;
     public static javax.swing.JCheckBox C_Taiko;
@@ -486,6 +513,7 @@ public class Window extends javax.swing.JFrame {
     public static javax.swing.JLabel L_i;
     public static javax.swing.JLabel L_madeBy;
     public static javax.swing.JLabel L_max;
+    public static javax.swing.JLabel L_max_img;
     public static javax.swing.JLabel N_CTB;
     public static javax.swing.JLabel N_Mania;
     public static javax.swing.JLabel N_STD;
@@ -495,5 +523,6 @@ public class Window extends javax.swing.JFrame {
     public static javax.swing.JScrollPane Scroll;
     public static javax.swing.JTextPane T_Area;
     public static javax.swing.JLabel jLabel1;
+    public static javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }
